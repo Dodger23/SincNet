@@ -329,9 +329,9 @@ for epoch in range(N_epochs):
    with open(output_folder+"/res.res", "a") as res_file:
     res_file.write("epoch %i, loss_tr=%f err_tr=%f loss_te=%f err_te=%f err_te_snt=%f\n" % (epoch+1, loss_tot,err_tot,loss_tot_dev,err_tot_dev,err_tot_dev_snt))   
 
-   checkpoint={'CNN_model_par': CNN_net.state_dict(),
-               'DNN1_model_par': DNN1_net.state_dict(),
-               'DNN2_model_par': DNN2_net.state_dict(),
+   checkpoint={'CNN_model_par' : CNN_net,
+               'DNN1_model_par': DNN1_net,
+               'DNN2_model_par': DNN2_net,
                }
    torch.save(checkpoint,output_folder+'/model_raw.pkl')
   
